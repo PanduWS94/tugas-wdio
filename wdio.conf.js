@@ -1,3 +1,4 @@
+// const { generate } = require('multiple-cucumber-html-reporter');
 exports.config = {
     //
     // ====================
@@ -6,6 +7,17 @@ exports.config = {
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
     //
+    // reporters: ['dot', ['mochawesome', {
+    //     outputDir: './reports',
+    //     outputFileFormat: function(opts) {
+    //         return `results-${opts.cid}.${opts.capabilities}.json`;
+    //     }
+    // }]],
+
+    // mochawesomeOpts: {
+    //     includeScreenshots: true,
+    //     screenshotUseRelativePath: true
+    // },
     // ==================
     // Specify Test Files
     // ==================
@@ -24,7 +36,8 @@ exports.config = {
         './test/specs/openbrowser.js',
         './test/specs/login.js',
         './test/specs/category.js',
-        './test/specs/product.js'
+        './test/specs/product.js',
+        './test/specs/hapusprodukdankategori.js'
         // './test/specs/**/*.js'
         // ToDo: define location for spec files here
     ],
@@ -117,7 +130,7 @@ exports.config = {
     
     //
     // The number of times to retry the entire specfile when it fails as a whole
-    // specFileRetries: 1,
+    specFileRetries: 0,
     //
     // Delay in seconds between the spec file retry attempts
     // specFileRetriesDelay: 0,
